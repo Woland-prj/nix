@@ -1,6 +1,6 @@
 {pkgs, ...}:
 pkgs.writers.writePython3Bin "wttr" {
-  libraries = with pkgs.python3Packages; [
+  libraries = with pkgs.python312Packages; [
     requests
     json
     datetime
