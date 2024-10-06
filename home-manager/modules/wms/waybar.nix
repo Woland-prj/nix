@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  playerctl = lib.getExe pkgs.playerctl;
+  playerctl = lib.getExe' pkgs.playerctl;
 in {
   programs.waybar = {
     enable = true;
