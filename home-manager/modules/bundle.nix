@@ -12,6 +12,7 @@
     ./rofi/rofi.nix
     ./pywal/pywal.nix
     ./nixvim/nixvim.nix
+    ./wlogout/wlogout.nix
 
     ./wms/hyprland.nix
     ./wms/waybar.nix

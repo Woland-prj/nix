@@ -1,4 +1,4 @@
-{ config, ... }: {
+{config, ...}: {
   home.file = {
     # Copy pywal templates
     ".config/wal/templates/colors-hyprland.conf".source = ./pywal/templates/colors-hyprland.conf;
@@ -10,6 +10,9 @@
     ".config/rofi/conf.rasi".source = ./rofi/conf.rasi;
     ".config/rofi/config-main.rasi".source = ./rofi/config-main.rasi;
     ".config/rofi/config-wallpaper.rasi".source = ./rofi/config-wallpaper.rasi;
+
+    # Copy wlogout config
+    ".config/wlogout".source = ./wlogout/conf;
   };
 
   xdg.configFile = {
