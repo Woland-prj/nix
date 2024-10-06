@@ -4,7 +4,7 @@
   ...
 }: let
   playerctl = lib.getExe pkgs.playerctl;
-  wttr = pkgs.scripts.wttr;
+  wttr = pkgs.wttr;
 in {
   programs.waybar = {
     enable = true;
