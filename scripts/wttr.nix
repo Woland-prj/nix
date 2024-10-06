@@ -6,7 +6,7 @@ pkgs.writers.writePython3Bin "wttr" {
     datetime
   ];
 } ''
-  import json
+  import json5
   import requests
   from datetime import datetime
 
