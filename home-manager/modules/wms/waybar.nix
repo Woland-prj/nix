@@ -1,19 +1,25 @@
 {
+  pkgs,
+  lib,
+  ...
+}: let
+  playerctl = lib.getExe pkgs.playerctl;
+in {
   programs.waybar = {
     enable = true;
     settings = {
       mainBar = {
-        layer = "top"; 
+        layer = "top";
         output = "DP-2";
         margin = "10 10 0 10";
         spacing = "0";
 
         modules-left = [
           "tray"
-          "hyprland/language" 
+          "hyprland/language"
           "custom/playerlabel"
         ];
-        modules-center = [ "hyprland/workspaces" ]; 
+        modules-center = ["hyprland/workspaces"];
         modules-right = [
           "network"
           "pulseaudio"
@@ -73,7 +79,7 @@
           format = "<span>{}</span> 󰝚";
           return-type = "json";
           max-length = 30;
-          exec = "playerctl -a metadata --format '{\"text\": \"{{markup_escape(title)}} - {{artist}}\": \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
+          exec = "${playerctl} -a metadata --format '{\"text\": \"{{markup_escape(title)}} - {{artist}}\": \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
           on-click-middle = "playerctl play-pause";
           on-click = "playerctl previous";
           on-click-right = "playerctl next";
@@ -173,11 +179,11 @@
     };
     style = ''
       @import "/home/woland/.cache/wal/colors-waybar.css";
-      
+
       /* :root { */
       /*   --bg-color: rgba(40, 40, 40, 0.6); */
       /* } */
-      
+
       * {
         border: none;
         border-radius: 0;
@@ -187,21 +193,21 @@
         color: @color2;
         font-weight: bold;
       }
-      
+
       window#waybar {
         background: transparent;
       }
-      
+
       window#waybar.hidden {
         opacity: 0.2;
       }
-      
+
       #workspaces {
         background-color: rgba(40, 40, 40, 0.6);
         border-radius: 40px;
         padding: 5px 5px;
       }
-      
+
       #workspaces button {
         padding: 0;
         background: @color3;
@@ -215,44 +221,44 @@
         background: @color5;
         min-width: 50px;
       }
-      
+
       #workspaces button:last-child {
         margin-right: 0px;
       }
-      
+
       /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
       #workspaces button:hover {
         text-shadow: none;
         background: @color6;
       }
-      
+
       #taskbar {
         margin-right: 8px;
         padding: 5px 10px;
         border-radius: 40px;
         background-color: rgba(40, 40, 40, 0.6);
       }
-      
+
       /* #taskbar.empty { */
       /*   background-color: ; */
       /* } */
-      
+
       #taskbar button {
         margin-right: 10px;
         padding: 0;
         transition: all 0.3s ease;
         border-radius: 6px;
       }
-      
+
       #taskbar button:last-child {
         margin-right: 0px;
       }
-      
+
       #taskbar button:hover {
         text-shadow: none;
         background: transparent;
       }
-      
+
       #language {
         padding-left: 16px;
         margin-right: 8px;
@@ -262,7 +268,7 @@
         color: @color3;
         background-color: rgba(40, 40, 40, 0.6);
       }
-      
+
       #custom-pacman {
         padding-left: 16px;
         padding-right: 8px;
@@ -271,7 +277,7 @@
         color: #ffffff;
         background: #383c4a;
       }
-      
+
       #custom-mail {
         margin-right: 8px;
         padding-right: 16px;
@@ -280,7 +286,7 @@
         color: #ffffff;
         background: #383c4a;
       }
-      
+
       #custom-playerlabel {
         margin-right: 8px;
         padding-right: 16px;
@@ -290,7 +296,7 @@
         color: @color3;
         background-color: rgba(40, 40, 40, 0.6);
       }
-      
+
       #mode {
         padding-left: 16px;
         padding-right: 16px;
@@ -299,7 +305,7 @@
         color: #ffffff;
         background: #383c4a;
       }
-      
+
       #clock {
         margin-right: 8px;
         padding-left: 16px;
@@ -309,7 +315,7 @@
         color: @color3;
         background-color: rgba(40, 40, 40, 0.6);
       }
-      
+
       #custom-weather {
         margin-right: 8px;
         padding-right: 16px;
@@ -319,7 +325,7 @@
         color: @color3;
         background-color: rgba(40, 40, 40, 0.6);
       }
-      
+
       #network {
         margin-right: 8px;
         padding-left: 16px;
@@ -329,7 +335,7 @@
         color: @color3;
         background-color: rgba(40, 40, 40, 0.6);
       }
-      
+
       #pulseaudio {
         margin-right: 8px;
         padding-left: 16px;
@@ -339,12 +345,12 @@
         color: @color3;
         background-color: rgba(40, 40, 40, 0.6);
       }
-      
+
       #pulseaudio.muted {
         background-color: @color15;
         color: @color11;
       }
-      
+
       #custom-mem {
         padding-left: 16px;
         padding-right: 8px;
@@ -353,7 +359,7 @@
         color: @color3;
         background-color: rgba(40, 40, 40, 0.6);
       }
-      
+
       #cpu {
         margin-right: 8px;
         padding-left: 8px;
@@ -363,7 +369,7 @@
         color: @color3;
         background-color: rgba(40, 40, 40, 0.6);
       }
-      
+
       #temperature {
         margin-right: 8px;
         padding-left: 16px;
@@ -373,11 +379,11 @@
         color: #ffffff;
         background: #6c61db;
       }
-      
+
       #temperature.critical {
         background-color: #eb4d4b;
       }
-      
+
       #backlight {
         margin-right: 8px;
         padding-left: 16px;
@@ -387,7 +393,7 @@
         color: #ffffff;
         background: #383c4a;
       }
-      
+
       #battery {
         margin-right: 8px;
         padding-left: 16px;
@@ -397,17 +403,17 @@
         color: #ffffff;
         background: #383c4a;
       }
-      
+
       #battery.charging {
         color: #ffffff;
         background-color: #26a65b;
       }
-      
+
       #battery.warning:not(.charging) {
         background-color: #ffbe61;
         color: black;
       }
-      
+
       #battery.critical:not(.charging) {
         background-color: #f53c3c;
         color: #ffffff;
@@ -417,7 +423,7 @@
         animation-iteration-count: infinite;
         animation-direction: alternate;
       }
-      
+
       #tray {
         padding-left: 16px;
         padding-right: 16px;
@@ -427,7 +433,7 @@
         color: @color3;
         background-color: rgba(40, 40, 40, 0.6);
       }
-      
+
       #custom-exit {
         /* padding-left: 16px; */
         /* padding-right: 16px; */
@@ -437,7 +443,7 @@
         color: @color3;
         min-width: 33px;
       }
-      
+
       #custom-updates {
         padding-left: 16px;
         margin-right: 8px;
@@ -447,7 +453,7 @@
         color: @color3;
         transition: none;
       }
-      
+
       @keyframes blink {
         to {
           background-color: #ffffff;
@@ -457,4 +463,3 @@
     '';
   };
 }
-
