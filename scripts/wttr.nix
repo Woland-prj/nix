@@ -95,8 +95,8 @@ pkgs.writers.writePython3Bin "wttr" {
 
 
   data['alt'] = ''
-  data['text'] = WEATHER_CODES[weather['current_condition'][0]
-      ['weatherCode']] + " " + weather['current_condition'][0]['temp_C'] + "°"
+  data['text'] = WEATHER_CODES[weather['current_condition'][0]['weatherCode']] + \
+  " " + weather['current_condition'][0]['temp_C'] + "°"
 
   data['tooltip'] = f"<b>\
       {weather['current_condition'][0]['weatherDesc'][0]['value']} \
