@@ -119,8 +119,11 @@ pkgs.writers.writePython3Bin "wttr" {
               if int(format_time(hour['time'])) < datetime.now().hour-2:
                   continue
           # noqa
-          data['tooltip'] += f"{format_time(hour['time'])} {WEATHER_CODES[hour['weatherCode']]} \
-          {format_temp(hour['FeelsLikeC'])} {hour['weatherDesc'][0]['value']}, {format_chances(hour)}\n"
+          data['tooltip'] += f"{format_time(hour['time'])} \
+          {WEATHER_CODES[hour['weatherCode']]} \
+          {format_temp(hour['FeelsLikeC'])} \
+          {hour['weatherDesc'][0]['value']}, \
+          {format_chances(hour)}\n"
 
 
   print(json5.dumps(data))
