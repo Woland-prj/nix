@@ -1,11 +1,9 @@
 {
   pkgs,
-  packages,
   lib,
   ...
 }: let
   playerctl = lib.getExe pkgs.playerctl;
-  wttr = packages.wttr;
 in {
   programs.waybar = {
     enable = true;
@@ -100,7 +98,7 @@ in {
           format = "{}";
           tooltip = true;
           interval = 1800;
-          exec = "${wttr}";
+          exec = "wttr";
           return-type = "json";
         };
 
