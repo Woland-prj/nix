@@ -1,4 +1,11 @@
 {
+  pkgs,
+  lib,
+  ...
+}: let
+  playerctl = lib.getExe pkgs.playerctl;
+  wttr = lib.getExe pkgs.wttr;
+in {
   programs.waybar = {
     enable = true;
     settings = {
@@ -73,7 +80,7 @@
           format = "<span>{}</span> 󰝚";
           return-type = "json";
           max-length = 30;
-          exec = "playerctl -a metadata --format '{\"text\": \"{{markup_escape(title)}} - {{artist}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
+          exec = "${playerctl} -a metadata --format '{\"text\": \"{{markup_escape(title)}} - {{artist}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
           on-click-middle = "playerctl play-pause";
           on-click = "playerctl previous";
           on-click-right = "playerctl next";
@@ -92,7 +99,7 @@
           format = "{}";
           tooltip = true;
           interval = 1800;
-          exec = "python -u $HOME/nix/home-manager/modules/wms/scripts/wttr.py";
+          exec = "${wttr}";
           return-type = "json";
         };
 
