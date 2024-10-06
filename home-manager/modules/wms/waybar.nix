@@ -1,10 +1,11 @@
 {
   pkgs,
+  packages,
   lib,
   ...
 }: let
   playerctl = lib.getExe pkgs.playerctl;
-  wttr = pkgs.wttr;
+  wttr = packages.wttr;
 in {
   programs.waybar = {
     enable = true;
