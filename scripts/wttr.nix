@@ -100,7 +100,7 @@ pkgs.writers.writePython3Bin "wttr" {
 
   data['tooltip'] = f"<b>{weather['current_condition'][0]
       ['weatherDesc'][0]['value']} \
-  {weather['current_condition'][0]['temp_C']}°</b>\n"
+      {weather['current_condition'][0]['temp_C']}°</b>\n"
   data['tooltip'] += f"Feels like: \
       {weather['current_condition'][0]['FeelsLikeC']}°\n"
   data['tooltip'] += f"Wind: \
