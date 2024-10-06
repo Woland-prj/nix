@@ -6,7 +6,6 @@ pkgs.writers.writePython3Bin "wttr" {
     datetime
   ];
 } ''
-  # noqa
   import json5
   import requests
   from datetime import datetime
@@ -99,6 +98,7 @@ pkgs.writers.writePython3Bin "wttr" {
       " " + weather['current_condition'][0]['temp_C']+ "°"
   #data['text'] = weather['current_condition'][0]['FeelsLikeC']+"°"
 
+  # noqa
   data['tooltip'] = f"<b>{weather['current_condition'][0]['weatherDesc'][0]['value']} {weather['current_condition'][0]['temp_C']}°</b>\n"
   data['tooltip'] += f"Feels like: {weather['current_condition'][0]['FeelsLikeC']}°\n"
   data['tooltip'] += f"Wind: {weather['current_condition'][0]['windspeedKmph']}Km/h\n"
@@ -116,6 +116,7 @@ pkgs.writers.writePython3Bin "wttr" {
           if i == 0:
               if int(format_time(hour['time'])) < datetime.now().hour-2:
                   continue
+          # noqa
           data['tooltip'] += f"{format_time(hour['time'])} {WEATHER_CODES[hour['weatherCode']]} {format_temp(hour['FeelsLikeC'])} {hour['weatherDesc'][0]['value']}, {format_chances(hour)}\n"
 
 
