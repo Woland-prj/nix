@@ -112,14 +112,14 @@ pkgs.writers.writePython3Bin "wttr" {
           data['tooltip'] += "Tomorrow, "
       data['tooltip'] += f"{day['date']}</b>\n"
       data['tooltip'] += f"⬆️ {day['maxtempC']}° ⬇️ {day['mintempC']}° "
-      data['tooltip'] += f" {day['astronomy'][0]['sunrise']} \\
+      data['tooltip'] += f" {day['astronomy'][0]['sunrise']} \
            {day['astronomy'][0]['sunset']}\n"
       for hour in day['hourly']:
           if i == 0:
               if int(format_time(hour['time'])) < datetime.now().hour-2:
                   continue
           # noqa
-          data['tooltip'] += f"{format_time(hour['time'])} {WEATHER_CODES[hour['weatherCode']]} \\
+          data['tooltip'] += f"{format_time(hour['time'])} {WEATHER_CODES[hour['weatherCode']]} \
           {format_temp(hour['FeelsLikeC'])} {hour['weatherDesc'][0]['value']}, {format_chances(hour)}\n"
 
 
