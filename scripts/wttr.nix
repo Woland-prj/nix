@@ -72,7 +72,7 @@ pkgs.writers.writePython3Bin "wttr" {
 
 
   def format_temp(temp):
-      return (hour['FeelsLikeC']+"°").ljust(3)
+      return (hour['FeelsLikeC'] + "°").ljust(3)
 
 
   def format_chances(hour):
@@ -90,16 +90,16 @@ pkgs.writers.writePython3Bin "wttr" {
       conditions = []
       for event in chances.keys():
           if int(hour[event]) > 0:
-              conditions.append(chances[event]+" "+hour[event]+"%")
+              conditions.append(chances[event] + " " + hour[event] + "%")
       return ", ".join(conditions)
 
   data['alt'] = ''
   data['text'] = WEATHER_CODES[weather['current_condition']
       [0]['weatherCode']] + \
-      " " + weather['current_condition'][0]['temp_C']+ "°"
+      " " + weather['current_condition'][0]['temp_C'] + "°"
 
-  data['tooltip'] = f"<b>{weather['current_condition'][0]
-      ['weatherDesc'][0]['value']} \
+  data['tooltip'] = f"<b>\
+      {weather['current_condition'][0]['weatherDesc'][0]['value']} \
       {weather['current_condition'][0]['temp_C']}°</b>\n"
   data['tooltip'] += f"Feels like: \
       {weather['current_condition'][0]['FeelsLikeC']}°\n"
