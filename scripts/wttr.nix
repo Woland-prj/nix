@@ -2,7 +2,7 @@
 pkgs.writers.writePython3Bin "wttr" {
   libraries = with pkgs.python312Packages; [
     requests
-    jsonio
+    json5
     datetime
   ];
 } ''
@@ -118,5 +118,5 @@ pkgs.writers.writePython3Bin "wttr" {
           data['tooltip'] += f"{format_time(hour['time'])} {WEATHER_CODES[hour['weatherCode']]} {format_temp(hour['FeelsLikeC'])} {hour['weatherDesc'][0]['value']}, {format_chances(hour)}\n"
 
 
-  print(json.dumps(data))
+  print(json5.dumps(data))
 ''
