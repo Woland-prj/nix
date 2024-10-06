@@ -2,6 +2,7 @@
 pkgs.writers.writePython3Bin "wttr" {
   libraries = with pkgs.python312Packages; [
     requests
+    jsonio
     datetime
   ];
 } ''
