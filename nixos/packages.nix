@@ -27,6 +27,7 @@
     qbittorrent
     gnome-calculator
     cups
+    playerctl
 
     # Coding stuff
     gnumake
