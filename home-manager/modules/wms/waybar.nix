@@ -66,14 +66,14 @@
           format = "{} 󰌌";
           format-en = "US";
           format-ru = "RU";
-          on-click = "hyprctl switchxkblayout gaming-keyboard next";
+          on-click = "hyprctl switchxkblayout next";
         };
 
         "custom/playerlabel" = {
           format = "<span>{}</span> 󰝚";
           return-type = "json";
           max-length = 30;
-          exec = "playerctl -a metadata --format '{\"text\": \"{{markup_escape(title)}} - {{artist}}\": \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
+          exec = "playerctl -a metadata --format '{\"text\": \"{{markup_escape(title)}} - {{artist}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
           on-click-middle = "playerctl play-pause";
           on-click = "playerctl previous";
           on-click-right = "playerctl next";
