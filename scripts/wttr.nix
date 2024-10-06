@@ -6,6 +6,7 @@ pkgs.writers.writePython3Bin "wttr" {
     datetime
   ];
 } ''
+  # noqa
   import json5
   import requests
   from datetime import datetime
