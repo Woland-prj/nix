@@ -2,7 +2,11 @@
   pkgs,
   lib,
   ...
-}: {
+}: let
+  scripts = {
+    wttr = import ../scripts/wttr.nix {inherit pkgs;};
+  };
+in {
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = ["python-2.7.18.8" "electron-25.9.0"];
@@ -103,6 +107,9 @@
     libsForQt5.qtstyleplugin-kvantum
     libsForQt5.qt5ct
     papirus-nord
+
+    # Special custom scripts
+    scripts.wttr
   ];
 
   fonts.packages = with pkgs; [
