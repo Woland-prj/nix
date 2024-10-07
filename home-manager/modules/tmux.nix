@@ -1,44 +1,44 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.tmux = {
     enable = true;
     terminal = "tmux-256color";
     historyLimit = 10000;
     prefix = "C-Space";
     baseIndex = 1;
-    plugins = with pkgs;
-      [
-        tmuxPlugins.sensible
-        tmuxPlugins.vim-tmux-navigator
-        {
-          plugin = tmuxPlugins.catppuccin;
-          extraConfig = '' 
-            set -g @catppuccin_flavour 'mocha'
-            set -g @catppuccin_window_left_separator ""
-            set -g @catppuccin_window_right_separator " "
-            set -g @catppuccin_window_middle_separator "█ "
-            set -g @catppuccin_window_number_position "left"
-          '';
-        }
-        {
-          plugin = tmuxPlugins.resurrect;
-          extraConfig = ''
-            set -g @resurrect-strategy-vim 'session'
-            set -g @resurrect-strategy-nvim 'session'
-            set -g @resurrect-capture-pane-contents 'on'
-          '';
-         }
-         {
-           plugin = tmuxPlugins.continuum;
-           extraConfig = ''
-             set -g @continuum-restore 'on'
-             set -g @continuum-boot 'on'
-             set -g @continuum-save-interval '10'
-           '';
-         }
-      ];
+    plugins = with pkgs; [
+      tmuxPlugins.sensible
+      tmuxPlugins.vim-tmux-navigator
+      {
+        plugin = tmuxPlugins.catppuccin;
+        extraConfig = ''
+          set -g @catppuccin_flavour 'mocha'
+          set -g @catppuccin_window_left_separator ""
+          set -g @catppuccin_window_right_separator " "
+          set -g @catppuccin_window_middle_separator "█ "
+          set -g @catppuccin_window_number_position "left"
+        '';
+      }
+      {
+        plugin = tmuxPlugins.resurrect;
+        extraConfig = ''
+          set -g @resurrect-strategy-vim 'session'
+          set -g @resurrect-strategy-nvim 'session'
+          set -g @resurrect-capture-pane-contents 'on'
+        '';
+      }
+      {
+        plugin = tmuxPlugins.continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-boot 'on'
+          set -g @continuum-save-interval '10'
+        '';
+      }
+    ];
     extraConfig = ''
+      bind C-Space send-prefix
       bind s choose-tree -sZ -O name
-      
+
       unbind %
       bind | split-window -h
 
