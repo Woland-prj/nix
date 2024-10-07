@@ -11,5 +11,6 @@
     ./hyprland.nix
     ./nvidia.nix
     ./thunar.nix
+    ./fs.nix
   ];
 }
