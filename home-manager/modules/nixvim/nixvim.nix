@@ -54,6 +54,7 @@
       ./plugins/utils/toggleterm.nix
       ./plugins/utils/comment.nix
       ./plugins/utils/codeium.nix
+      ./plugins/utils/vim-tmux-navigator.nix
     ];
   };
 }
