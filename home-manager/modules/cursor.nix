@@ -1,8 +1,8 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   home = {
     pointerCursor = {
-      package = pkgs.vanilla-dmz;
-      name = "Vanilla-DMZ";
+      package = pkgs.rose-pine-cursor;
+      name = "Rose-Pine-Cursor";
       size = 24;
       gtk.enable = true;
       x11 = {
