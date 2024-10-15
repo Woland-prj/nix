@@ -158,6 +158,7 @@
 
         # Numpad apps bind
         ", KP_Divide, exec, $browser --new-tab https://www.youtube.com/"
+        ", KP_Enter, exec, $terminal --title=terminal -e $tmux main "
 
         # Function row binds
         ", XF86Tools, exec, $browser --new-tab https://music.yandex.ru/home"
