@@ -38,7 +38,7 @@
     extraConfig = ''
       bind C-Space send-prefix
       bind s choose-tree -sZ -O name
-      bind C command-prompt -p "New Session:" "new-session -A -s '%%'"
+      bind S command-prompt -p "New Session:" "new-session -A -s '%%'"
 
       unbind %
       bind | split-window -h
