@@ -8,16 +8,14 @@
       # Pywal colors
       "source" = "~/.cache/wal/colors-hyprland.conf";
 
-
       # Monitors setup
       # monitor = ",1920x1080,auto,1";
       monitor = [
         "DP-2,2560x1440@165,1080x0,1"
         "HDMI-A-1,1920x1080@60,0x0,1,transform,1"
       ];
-      
-      
-      # Autostart      
+
+      # Autostart
       exec-once = [
         # Load Dunst Notification Manager
         "dunst"
@@ -32,7 +30,7 @@
         "swww-daemon"
 
         # Load wallpaper and color scheme
-        "~/nix/scripts/wallpapers.sh init" 
+        "~/nix/scripts/wallpapers.sh init"
 
         # Load last wallpaper and waybar with pywal colors
         "waybar"
@@ -44,7 +42,6 @@
         "telegram-desktop"
       ];
 
-
       # Environment
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"
@@ -54,7 +51,6 @@
         "QT_QPA_PLATFORM,wayland"
       ];
 
- 
       # Keyboard
       input = {
         kb_layout = "us,ru";
@@ -66,7 +62,6 @@
         sensitivity = 0;
       };
 
-
       # Window
       general = {
         gaps_in = 8;
@@ -76,7 +71,6 @@
         "col.inactive_border" = "rgba(282828cc)";
         layout = "dwindle";
       };
-
 
       # Decoration
       decoration = {
@@ -99,7 +93,6 @@
         "col.shadow" = "0x66000000";
       };
 
-
       # Animation
       animations = {
         enabled = true;
@@ -114,7 +107,6 @@
         ];
       };
 
-
       # Layouts
       dwindle = {
         pseudotile = true;
@@ -128,7 +120,6 @@
         workspace_swipe_forever = true;
       };
 
-
       # Misc
       misc = {
         disable_hyprland_logo = true;
@@ -136,86 +127,88 @@
         mouse_move_enables_dpms = true;
       };
 
-
       # Keybindings
       "$mainMod" = "SUPER";
       "$terminal" = "alacritty";
-      "$filemanager" = "thunar"; 
+      "$filemanager" = "thunar";
       "$vscode" = "code";
       "$calc" = "gnome-calculator";
-      "$telegram" = "telegram-desktop"; 
+      "$telegram" = "telegram-desktop";
       "$browser" = "firefox";
       "$obsidian" = "obsidian";
       "$torrent" = "qbittorrent";
-    
+
       "$tmux" = "tmux -2 new-session -A -s";
       "$fetch" = "fastfetch";
-    
+
       bind = [
         # Apps binds
-        "$mainMod, C, exec, $vscode" 
-        "$mainMod, M, exec, $telegram --title=telegram" 
-        "$mainMod, E, exec, $filemanager" 
-        "$mainMod, O, exec, $obsidian" 
-        "$mainMod, B, exec, $browser" 
-        "$mainMod, I, exec, $insomnia" 
-        "$mainMod, RETURN, exec, $terminal --title=terminal -e $tmux main " 
-        "$mainMod SHIFT, RETURN, exec, $terminal" 
-        "$mainMod, Z, exec, $zed" 
-        "$mainMod SHIFT, N, exec, $terminal --title=fetch --hold -e $fetch" 
-        "$mainMod SHIFT, T, exec, $torrent" 
-        "$mainMod ALT, T, exec, $terminal" 
-        
+        "$mainMod, C, exec, $vscode"
+        "$mainMod, M, exec, $telegram --title=telegram"
+        "$mainMod, E, exec, $filemanager"
+        "$mainMod, O, exec, $obsidian"
+        "$mainMod, B, exec, $browser"
+        "$mainMod, I, exec, $insomnia"
+        "$mainMod, RETURN, exec, $terminal --title=terminal -e $tmux main "
+        "$mainMod SHIFT, RETURN, exec, $terminal"
+        "$mainMod, Z, exec, $zed"
+        "$mainMod SHIFT, N, exec, $terminal --title=fetch --hold -e $fetch"
+        "$mainMod SHIFT, T, exec, $torrent"
+        "$mainMod ALT, T, exec, $terminal"
+
+        # Numpad apps bind
+        ", KP_Divide, exec, $browser --new-tab https://www.youtube.com/"
+
         # Function row binds
-        ", XF86Tools, exec, $browser --new-tab https://music.yandex.ru/home" 
-        ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -3%" 
-        ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +3%" 
-        ", XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle" 
-        
-        ", XF86AudioStop, exec, playerctl stop" 
-        ", XF86AudioPrev, exec, playerctl previous" 
-        ", XF86AudioPlay, exec, playerctl play-pause" 
-        ", XF86AudioNext, exec, playerctl next" 
-        
-        ", XF86Mail, exec, $mail" 
-        ", XF86HomePage, exec, $browser --new-tab http://127.0.0.1:8384/" 
-        ", XF86Calculator, exec, $calc" 
-        
+        ", XF86Tools, exec, $browser --new-tab https://music.yandex.ru/home"
+        ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -3%"
+        ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +3%"
+        ", XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle"
+
+        ", XF86AudioStop, exec, playerctl stop"
+        ", XF86AudioPrev, exec, playerctl previous"
+        ", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioNext, exec, playerctl next"
+
+        ", XF86Mail, exec, $mail"
+        ", XF86HomePage, exec, $browser --new-tab http://127.0.0.1:8384/"
+        ", XF86Calculator, exec, $calc"
+
         # Windows layout & actions
-        "$mainMod, X, killactive" 
-        "$mainMod, F, fullscreen" 
-        "$mainMod, T, togglefloating" 
-        "$mainMod, I, togglesplit" 
-        
+        "$mainMod, X, killactive"
+        "$mainMod, F, fullscreen"
+        "$mainMod, T, togglefloating"
+        "$mainMod, I, togglesplit"
+
         # Focus moving
-        "$mainMod, left, movefocus, l" 
-        "$mainMod, right, movefocus, r" 
-        "$mainMod, up, movefocus, u" 
-        "$mainMod, down, movefocus, d" 
-        
+        "$mainMod, left, movefocus, l"
+        "$mainMod, right, movefocus, r"
+        "$mainMod, up, movefocus, u"
+        "$mainMod, down, movefocus, d"
+
         # Base scripts
-        ", PRINT, exec, slurp | grim -g - $HOME/Pictures/screenshots/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')" 
-        "$mainMod, S, exec, slurp | grim -g - $HOME/Pictures/screenshots/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')" 
-        "$mainMod, Q, exec, loginctl terminate-user woland" 
-        "$mainMod CTRL, RETURN, exec, rofi -show drun -config ~/.config/rofi/conf.rasi -theme ~/.config/rofi/config-main.rasi" 
-        "$mainMod SHIFT, B, exec, $HOME/nix/scripts/launch_waybar.sh" 
-        "$mainMod CTRL, C, exec, $terminal --title=cava -e cava -p ~/dotfiles/cava/config " 
-        "$mainMod, W, exec, $HOME/nix/scripts/wallpapers.sh select" 
-        
+        ", PRINT, exec, slurp | grim -g - $HOME/Pictures/screenshots/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
+        "$mainMod, S, exec, slurp | grim -g - $HOME/Pictures/screenshots/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
+        "$mainMod, Q, exec, loginctl terminate-user woland"
+        "$mainMod CTRL, RETURN, exec, rofi -show drun -config ~/.config/rofi/conf.rasi -theme ~/.config/rofi/config-main.rasi"
+        "$mainMod SHIFT, B, exec, $HOME/nix/scripts/launch_waybar.sh"
+        "$mainMod CTRL, C, exec, $terminal --title=cava -e cava -p ~/dotfiles/cava/config "
+        "$mainMod, W, exec, $HOME/nix/scripts/wallpapers.sh select"
+
         # Hyprpicker
-        "$mainMod, P, exec, hyprpicker -an" 
-        
+        "$mainMod, P, exec, hyprpicker -an"
+
         # Switching workspaces
-        "$mainMod, 1, workspace, 1" 
-        "$mainMod, 2, workspace, 2" 
-        "$mainMod, 3, workspace, 3" 
-        "$mainMod, 4, workspace, 4" 
-        "$mainMod, 5, workspace, 5" 
-        "$mainMod, 6, workspace, 6" 
-        "$mainMod, 7, workspace, 7" 
-        "$mainMod, 8, workspace, 8" 
-        "$mainMod, 9, workspace, 9" 
-        "$mainMod, 0, workspace, 10" 
+        "$mainMod, 1, workspace, 1"
+        "$mainMod, 2, workspace, 2"
+        "$mainMod, 3, workspace, 3"
+        "$mainMod, 4, workspace, 4"
+        "$mainMod, 5, workspace, 5"
+        "$mainMod, 6, workspace, 6"
+        "$mainMod, 7, workspace, 7"
+        "$mainMod, 8, workspace, 8"
+        "$mainMod, 9, workspace, 9"
+        "$mainMod, 0, workspace, 10"
 
         ", KP_End, workspace, 1"
         ", KP_Down, workspace, 2"
@@ -228,60 +221,59 @@
         ", KP_Prior, workspace, 9"
         ", KP_Insert, workspace, 10"
 
-        "$mainMod ALT, l, workspace, e+1" 
-        "$mainMod ALT, h, workspace, e-1" 
-        
+        "$mainMod ALT, l, workspace, e+1"
+        "$mainMod ALT, h, workspace, e-1"
+
         # Moving to workspaces
-        "$mainMod ALT, right, workspace, e+1" 
-        "$mainMod ALT, left, workspace, e-1" 
-        "$mainMod SHIFT, 1, movetoworkspace, 1" 
-        "$mainMod SHIFT, 2, movetoworkspace, 2" 
-        "$mainMod SHIFT, 3, movetoworkspace, 3" 
-        "$mainMod SHIFT, 4, movetoworkspace, 4" 
-        "$mainMod SHIFT, 5, movetoworkspace, 5" 
-        "$mainMod SHIFT, 6, movetoworkspace, 6" 
-        "$mainMod SHIFT, 7, movetoworkspace, 7" 
-        "$mainMod SHIFT, 8, movetoworkspace, 8" 
-        "$mainMod SHIFT, 9, movetoworkspace, 9" 
-        "$mainMod SHIFT, 0, movetoworkspace, 10" 
-        
+        "$mainMod ALT, right, workspace, e+1"
+        "$mainMod ALT, left, workspace, e-1"
+        "$mainMod SHIFT, 1, movetoworkspace, 1"
+        "$mainMod SHIFT, 2, movetoworkspace, 2"
+        "$mainMod SHIFT, 3, movetoworkspace, 3"
+        "$mainMod SHIFT, 4, movetoworkspace, 4"
+        "$mainMod SHIFT, 5, movetoworkspace, 5"
+        "$mainMod SHIFT, 6, movetoworkspace, 6"
+        "$mainMod SHIFT, 7, movetoworkspace, 7"
+        "$mainMod SHIFT, 8, movetoworkspace, 8"
+        "$mainMod SHIFT, 9, movetoworkspace, 9"
+        "$mainMod SHIFT, 0, movetoworkspace, 10"
+
         # Window resizing
-        "$mainMod CTRL, right, resizeactive, 100 0" 
-        "$mainMod CTRL, left, resizeactive, -100 0" 
-        "$mainMod CTRL, up, resizeactive, 0 -100" 
-        "$mainMod CTRL, down, resizeactive, 0 100" 
-        
-        "$mainMod CTRL, l, resizeactive, 100 0" 
-        "$mainMod CTRL, h, resizeactive, -100 0" 
-        "$mainMod CTRL, k, resizeactive, 0 -100" 
-        "$mainMod CTRL, j, resizeactive, 0 100" 
-        
+        "$mainMod CTRL, right, resizeactive, 100 0"
+        "$mainMod CTRL, left, resizeactive, -100 0"
+        "$mainMod CTRL, up, resizeactive, 0 -100"
+        "$mainMod CTRL, down, resizeactive, 0 100"
+
+        "$mainMod CTRL, l, resizeactive, 100 0"
+        "$mainMod CTRL, h, resizeactive, -100 0"
+        "$mainMod CTRL, k, resizeactive, 0 -100"
+        "$mainMod CTRL, j, resizeactive, 0 100"
+
         # Window swaping
-        "$mainMod SHIFT, right, swapwindow, r" 
-        "$mainMod SHIFT, left, swapwindow, l" 
-        "$mainMod SHIFT, up, swapwindow, u" 
-        "$mainMod SHIFT, down, swapwindow, d" 
-        
-        "$mainMod SHIFT, l, swapwindow, r" 
-        "$mainMod SHIFT, h, swapwindow, l" 
-        "$mainMod SHIFT, k, swapwindow, u" 
-        "$mainMod SHIFT, j, swapwindow, d" 
-        
+        "$mainMod SHIFT, right, swapwindow, r"
+        "$mainMod SHIFT, left, swapwindow, l"
+        "$mainMod SHIFT, up, swapwindow, u"
+        "$mainMod SHIFT, down, swapwindow, d"
+
+        "$mainMod SHIFT, l, swapwindow, r"
+        "$mainMod SHIFT, h, swapwindow, l"
+        "$mainMod SHIFT, k, swapwindow, u"
+        "$mainMod SHIFT, j, swapwindow, d"
+
         # Window moving
-        "$mainMod, l, movefocus, r" 
-        "$mainMod, h, movefocus, l" 
-        "$mainMod, k, movefocus, u" 
-        "$mainMod, j, movefocus, d" 
-        
+        "$mainMod, l, movefocus, r"
+        "$mainMod, h, movefocus, l"
+        "$mainMod, k, movefocus, u"
+        "$mainMod, j, movefocus, d"
+
         # Mouse actions
-        "$mainMod, mouse_up, workspace, e+1" 
-        "$mainMod, mouse_down, workspace, e-1" 
+        "$mainMod, mouse_up, workspace, e+1"
+        "$mainMod, mouse_down, workspace, e-1"
       ];
       bindm = [
-        "$mainMod, mouse:272, movewindow" 
-        "$mainMod, mouse:273, resizewindow" 
+        "$mainMod, mouse:272, movewindow"
+        "$mainMod, mouse:273, resizewindow"
       ];
-
 
       # Windowrules
       workspace = [
@@ -301,7 +293,7 @@
         "float,title:^(network)$"
         "size 700 600,title:^(network)$"
         "move 100%-735 90,title:^(network)$"
-        
+
         # youtube
         "move 15 15,title:^(Картинка в картинке)"
         "float,title:^(Картинка в картинке)"
@@ -309,62 +301,62 @@
         "opacity 1.0 override 1.0 override 1.0 override 1.0,title:(.*)(- YouTube — Mozilla Firefox)$"
         "opacity 1.0 override 1.0 override 1.0 override 1.0,title:^(Картинка в картинке)"
         "workspace 10,title:^(Картинка в картинке)"
-        
+
         # picture in picture
         "move 15 15,title:^(Picture-in-Picture)"
         "float,title:^(Picture-in-Picture)"
         "size 1050 591,title:^(Picture-in-Picture)"
         "opacity 1.0 override 1.0 override 1.0 override 1.0,title:^(Picture-in-Picture)"
         "workspace 10,title:^(Picture-in-Picture)"
-        
+
         # torrent
         "float,^(org.qbittorrent.qBittorrent)$"
         "size 1050 591,^(org.qbittorrent.qBittorrent)$"
         "move 15 15,^(org.qbittorrent.qBittorrent)$"
         "workspace 10,^(org.qbittorrent.qBittorrent)$"
-        
+
         # cava music
         "float,title:^(cava)"
         "size 1050 450,title:^(cava)"
         "move 15 621,title:^(cava)"
         "noborder, title:^(cava)"
         "workspace 10,title:^(cava)"
-        
+
         # fetch
         "float,title:^(fetch)"
         "size 1305 650,title:^(fetch)"
         "center,title:^(fetch)"
-        
+
         # tg
         "float,title:^(Telegram)"
         "size 1050 819,title:^(Telegram)"
         "move 15 1086,title:^(Telegram)"
         "workspace 10,title:^(Telegram)"
-        
+
         # calc
         "float,^(org.gnome.Calculator)$"
         "size 375 615,^(org.gnome.Calculator)$"
         "move 100%-410 90,^(org.gnome.Calculator)$"
-        
+
         # pavucontrol
         "float,^(pavucontrol)$"
         "size 420 350,^(pavucontrol)$"
         "move 100%-455 90,^(pavucontrol)$"
-        
+
         "float,^(org.pulseaudio.pavucontrol)$"
         "size 420 350,^(org.pulseaudio.pavucontrol)$"
         "move 100%-455 90,^(org.pulseaudio.pavucontrol)$"
-        
+
         # rofi - dmenu
         "float,title:^(rofi - dmenu)"
         "center,title:^(rofi - dmenu)"
         "noborder,title:^(rofi - dmenu)"
-        
+
         # rofi
         "float,^(Rofi)$"
         "center,^(Rofi)$"
         "noborder,^(Rofi)$"
-        
+
         # obsidian
         "float,^(obsidian)$"
         "size 1640 950,^(obsidian)$"

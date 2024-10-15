@@ -101,6 +101,10 @@ in {
     grimblast
     slurp
 
+    # VM virtualization
+    qemu
+    quickemu
+
     # Other
     home-manager
     spice-vdagent
