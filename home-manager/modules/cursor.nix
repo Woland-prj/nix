@@ -2,7 +2,7 @@
   home = {
     pointerCursor = {
       package = pkgs.rose-pine-cursor;
-      # name = "Rose-Pine-Cursor";
+      name = "rose-pine-cursor";
       size = 24;
       gtk.enable = true;
       x11 = {
