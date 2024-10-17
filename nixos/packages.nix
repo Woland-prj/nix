@@ -32,7 +32,7 @@ in {
     gnome-calculator
     cups
     playerctl
-    mediawriter
+    writedisk
 
     # Coding stuff
     gnumake
