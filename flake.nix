@@ -24,13 +24,14 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
+    pkgs-stable = import nixpkgs-stable {
+      inherit system;
+      config.allowUnfree = true;
+    };
   in {
     nixosConfigurations.wldnixos = nixpkgs.lib.nixosSystem {
       specialArgs = {
-        pkgs-stable = import nixpkgs-stable {
-          inherit system;
-          config.allowUnfree = true;
-        };
+        inherit pkgs-stable;
         inherit inputs system;
       };
 
@@ -50,6 +51,9 @@
         ./home-manager/home.nix
         inputs.nixvim.homeManagerModules.nixvim
       ];
+      extraSpecialArgs = {
+        inherit pkgs-stable;
+      };
     };
   };
 }

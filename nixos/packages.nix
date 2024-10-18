@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-stable,
   lib,
   ...
 }: let
@@ -16,105 +17,109 @@ in {
       ];
   };
 
-  environment.systemPackages = with pkgs; [
-    # Desktop apps
-    firefox
-    telegram-desktop
-    alacritty
-    rofi
-    wofi
-    vlc
-    gparted
-    obsidian
-    libreoffice
-    qbittorrent
-    gnome-calculator
-    cups
-    playerctl
-    writedisk
+  environment.systemPackages =
+    (with pkgs; [
+      # Desktop apps
+      firefox
+      telegram-desktop
+      alacritty
+      rofi
+      wofi
+      vlc
+      gparted
+      obsidian
+      libreoffice
+      qbittorrent
+      gnome-calculator
+      cups
+      playerctl
+      writedisk
 
-    # Coding stuff
-    gnumake
-    gcc
-    nodejs
-    go
-    python
-    (python3.withPackages (ps: with ps; [requests]))
+      # Coding stuff
+      gnumake
+      gcc
+      nodejs
+      go
+      python
+      (python3.withPackages (ps: with ps; [requests]))
 
-    # CLI utils
-    pfetch
-    fastfetch
-    file
-    tree
-    fzf
-    fd
-    bat
-    eza
-    starship
-    tmux
-    vim
-    wget
-    git
-    btop
-    nix-index
-    unzip
-    scrot
-    ffmpeg
-    imagemagick
-    mediainfo
-    zram-generator
-    cava
-    zip
-    ntfs3g
-    brightnessctl
-    swww
-    openssl
-    lazygit
-    xdg-user-dirs
+      # CLI utils
+      pfetch
+      fastfetch
+      file
+      tree
+      fzf
+      fd
+      bat
+      eza
+      starship
+      tmux
+      vim
+      wget
+      git
+      btop
+      nix-index
+      unzip
+      scrot
+      ffmpeg
+      imagemagick
+      mediainfo
+      zram-generator
+      cava
+      zip
+      ntfs3g
+      brightnessctl
+      swww
+      openssl
+      lazygit
+      xdg-user-dirs
 
-    # Wayland stuff
-    xwayland
-    wl-clipboard
-    # cliphist
+      # Wayland stuff
+      xwayland
+      wl-clipboard
+      # cliphist
 
-    # WMs and stuff
-    hyprland
-    pywal
-    pywalfox-native
-    xdg-desktop-portal-hyprland
-    waybar
-    wlogout
+      # WMs and stuff
+      pywal
+      pywalfox-native
+      xdg-desktop-portal-hyprland
+      waybar
+      wlogout
 
-    # Sound
-    pipewire
-    wireplumber
-    pulseaudio
-    pamixer
-    pavucontrol
+      # Sound
+      pipewire
+      wireplumber
+      pulseaudio
+      pamixer
+      pavucontrol
 
-    # GPU stuff
-    rocm-opencl-icd
-    glaxnimate
+      # GPU stuff
+      rocm-opencl-icd
+      glaxnimate
 
-    # Screenshotting
-    grim
-    grimblast
-    slurp
+      # Screenshotting
+      grim
+      grimblast
+      slurp
 
-    # VM virtualization
-    qemu
-    quickemu
+      # VM virtualization
+      qemu
+      quickemu
 
-    # Other
-    home-manager
-    spice-vdagent
-    libsForQt5.qtstyleplugin-kvantum
-    libsForQt5.qt5ct
-    papirus-nord
+      # Other
+      home-manager
+      spice-vdagent
+      libsForQt5.qtstyleplugin-kvantum
+      libsForQt5.qt5ct
+      papirus-nord
 
-    # Special custom scripts
-    scripts.wttr
-  ];
+      # Special custom scripts
+      scripts.wttr
+    ])
+    ++ (with pkgs-stable; [
+      # Stable hyprland
+      hyprland
+    ]);
 
   fonts.packages = with pkgs; [
     jetbrains-mono
