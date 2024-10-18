@@ -13,7 +13,8 @@
     };
     grub = {
       efiSupport = true;
-      device = "nodev";
+      efiInstallAsRemovable = true;
+      devices = [ "nodev" ];
     };
   }; 
 }
