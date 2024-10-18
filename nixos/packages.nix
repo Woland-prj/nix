@@ -24,7 +24,6 @@ in {
     rofi
     wofi
     vlc
-    discord
     gparted
     obsidian
     libreoffice
@@ -76,7 +75,7 @@ in {
     # Wayland stuff
     xwayland
     wl-clipboard
-    cliphist
+    # cliphist
 
     # WMs and stuff
     hyprland

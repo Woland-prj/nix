@@ -1,6 +1,6 @@
 {
   imports = [
-    ./legacybootloader.nix
+    # ./legacybootloader.nix
     ./efibootloader.nix
     ./sound.nix
     ./zram.nix
