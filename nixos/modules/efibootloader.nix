@@ -11,10 +11,11 @@
       canTouchEfiVariables = true;
       efiSysMountPoint = "/boot";
     };
-    grub = {
-      efiSupport = true;
-      efiInstallAsRemovable = true;
-      devices = [ "nodev" ];
-    };
+    systemd-boot.enable = true;
+    #grub = {
+    #  efiSupport = true;
+    #  efiInstallAsRemovable = true;
+    #  devices = [ "nodev" ];
+    #};
   }; 
 }

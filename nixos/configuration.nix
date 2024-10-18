@@ -6,7 +6,7 @@
   ];
 
   disabledModules = [
-    ./modules/efibootloader.nix
+    ./modules/legacybootloader.nix
     ./modules/sound.nix
   ];
 
