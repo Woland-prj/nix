@@ -1,8 +1,10 @@
-{
+{pkgs-stable, ...}: {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
     sourceFirst = true;
+
+    package = pkgs-stable.hyprland;
 
     settings = {
       # Pywal colors
