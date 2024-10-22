@@ -8,7 +8,7 @@
 
     settings = {
       # Pywal colors
-      "source" = "~/.cache/wal/colors-hyprland.conf";
+      "source" = "~/.wm/colors-hyprland.conf";
 
       # Monitors setup
       # monitor = ",1920x1080,auto,1";

@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  userSettings,
   ...
 }: let
   playerctl = lib.getExe pkgs.playerctl;
@@ -134,18 +135,6 @@ in {
           tooltip = false;
         };
 
-        "custom/updates" = {
-          format = "{} ";
-          tooltip-format = "{}";
-          escape = true;
-          return-type = "json";
-          exec = "~/dotfiles/scripts/updates.sh";
-          restart-interval = 60;
-          on-click = "alacritty --title=updates -e ~/dotfiles/scripts/installupdates.sh";
-          on-click-right = "~/dotfiles/.settings/software.sh";
-          tooltip = false;
-        };
-
         "network" = {
           format = "{ifname}";
           format-wifi = "{essid}   {bandwidthDownBits} ";
@@ -178,7 +167,7 @@ in {
       };
     };
     style = ''
-      @import "/home/woland/.cache/wal/colors-waybar.css";
+      @import "/home/${userSettings.username}/.wm/colors-waybar.css";
 
       /* :root { */
       /*   --bg-color: rgba(40, 40, 40, 0.6); */

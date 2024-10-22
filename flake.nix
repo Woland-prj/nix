@@ -48,8 +48,8 @@
       wm = "hyprland"; # Selected window manager or desktop environment; must select one in both ./user/wm/ and ./system/wm/
       # window manager type (hyprland or x11) translator
       term = "alacritty"; # Default terminal command;
-      font = "JetBrains Mono"; # Selected font
-      fontPkg = nixpkgs.jetbrains-mono; # Font package
+      font = "JetBrains Mono NF"; # Selected font
+      fontPkg = pkgs.nerdfonts; # Font package
       editor = "nvim"; # Default editor;
     };
     system = systemSettings.system;
@@ -64,7 +64,7 @@
         config.allowUnfree = true;
       };
   in {
-    nixosConfigurations.wldnixos = pkgs.lib.nixosSystem {
+    nixosConfigurations.wldnixos = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit pkgs-stable;
         inherit userSettings;

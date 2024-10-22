@@ -6,10 +6,11 @@
   userSettings,
   ...
 }: let
-  themePath = "../../themes/" + userSettings.theme + "/" + userSettings.theme + ".yaml";
-  themePolarity = lib.removeSuffix "\n" (builtins.readFile (./. + "../../themes" + ("/" + userSettings.theme) + "/polarity.txt"));
-  backgroundUrl = builtins.readFile (./. + "../../themes" + ("/" + userSettings.theme) + "/backgroundurl.txt");
-  backgroundSha256 = builtins.readFile (./. + "../../themes/" + ("/" + userSettings.theme) + "/backgroundsha256.txt");
+  themeFolder = "../../../themes/";
+  themePath = themeFolder + userSettings.theme + "/" + userSettings.theme + ".yaml";
+  themePolarity = lib.removeSuffix "\n" (builtins.readFile (./. + themeFolder + ("/" + userSettings.theme) + "/polarity.txt"));
+  backgroundUrl = builtins.readFile (./. + themeFolder + ("/" + userSettings.theme) + "/backgroundurl.txt");
+  backgroundSha256 = builtins.readFile (./. + themeFolder + ("/" + userSettings.theme) + "/backgroundsha256.txt");
 in {
   imports = [inputs.stylix.homeManagerModules.stylix];
 
@@ -76,6 +77,49 @@ in {
     font.size = config.stylix.fonts.sizes.terminal;
     font.normal.family = userSettings.font;
   };
+
+  home.file.".wm/colors-waybar.css".text = ''
+    @define-color foreground #${config.lib.stylix.colors.base00};
+    @define-color background #${config.lib.stylix.colors.base07};
+    @define-color cursor #${config.lib.stylix.colors.base07};
+
+    @define-color color0 #${config.lib.stylix.colors.base00};
+    @define-color color1 #${config.lib.stylix.colors.base01};
+    @define-color color2 #${config.lib.stylix.colors.base02};
+    @define-color color3 #${config.lib.stylix.colors.base03};
+    @define-color color4 #${config.lib.stylix.colors.base04};
+    @define-color color5 #${config.lib.stylix.colors.base05};
+    @define-color color6 #${config.lib.stylix.colors.base06};
+    @define-color color7 #${config.lib.stylix.colors.base07};
+    @define-color color8 #${config.lib.stylix.colors.base08};
+    @define-color color9 #${config.lib.stylix.colors.base09};
+    @define-color color10 #${config.lib.stylix.colors.base0A};
+    @define-color color11 #${config.lib.stylix.colors.base0B};
+    @define-color color12 #${config.lib.stylix.colors.base0C};
+    @define-color color13 #${config.lib.stylix.colors.base0D};
+    @define-color color14 #${config.lib.stylix.colors.base0E};
+    @define-color color15 #${config.lib.stylix.colors.base0F};
+  '';
+  home.file.".wm/colors-hyprland.conf".text = ''
+    $background = rgb(${config.lib.stylix.colors.base07})
+    $foreground = rgb(${config.lib.stylix.colors.base00})
+    $color0 = rgb(${config.lib.stylix.colors.base00})
+    $color1 = rgb(${config.lib.stylix.colors.base01})
+    $color2 = rgb(${config.lib.stylix.colors.base02})
+    $color3 = rgb(${config.lib.stylix.colors.base03})
+    $color4 = rgb(${config.lib.stylix.colors.base04})
+    $color5 = rgb(${config.lib.stylix.colors.base05})
+    $color6 = rgb(${config.lib.stylix.colors.base06})
+    $color7 = rgb(${config.lib.stylix.colors.base07})
+    $color8 = rgb(${config.lib.stylix.colors.base08})
+    $color9 = rgb(${config.lib.stylix.colors.base09})
+    $color10 = rgb(${config.lib.stylix.colors.base0A})
+    $color11 = rgb(${config.lib.stylix.colors.base0B})
+    $color12 = rgb(${config.lib.stylix.colors.base0C})
+    $color13 = rgb(${config.lib.stylix.colors.base0D})
+    $color14 = rgb(${config.lib.stylix.colors.base0E})
+    $color15 = rgb(${config.lib.stylix.colors.base0F})
+  '';
 
   stylix.targets.rofi.enable = true;
   stylix.targets.gtk.enable = true;

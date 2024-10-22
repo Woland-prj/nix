@@ -2,24 +2,24 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      font = {
-        size = 16.0;
+      # font = {
+      # size = 16.0;
 
-        normal = {
-          family = "JetBrains Mono NF";
-          style = "Regular";
-        };
-        
-        bold = {
-          family = "JetBrains Mono NF";
-          style = "Bold";
-        };
+      # normal = {
+      # family = "JetBrains Mono NF";
+      # style = "Regular";
+      # };
 
-        italic = {
-          family = "JetBrains Mono NF";
-          style = "Italic";
-        };
-      };
+      # bold = {
+      # family = "JetBrains Mono NF";
+      # style = "Bold";
+      # };
+
+      # italic = {
+      # family = "JetBrains Mono NF";
+      # style = "Italic";
+      # };
+      # };
 
       window.padding = {
         x = 10;
