@@ -1,9 +1,19 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  userSettings,
+  ...
+}: let
   scripts = {
-    wttr = import ../scripts/wttr.nix {inherit pkgs;};
+    wttr = import ../scripts/wttr.nix {
+      inherit pkgs;
+    };
+    wallpaper = import ../scripts/wallpaper.nix {
+      inherit pkgs userSettings;
+    };
   };
 in {
   home.packages = [
     scripts.wttr
+    scripts.wallpaper
   ];
 }
