@@ -1,6 +1,6 @@
 {
   pkgs,
-  userSettings,
+  config,
   ...
 }: let
   scripts = {
@@ -8,7 +8,7 @@
       inherit pkgs;
     };
     wallpaper = import ../scripts/wallpaper.nix {
-      inherit pkgs userSettings;
+      inherit pkgs config;
     };
   };
 in {
