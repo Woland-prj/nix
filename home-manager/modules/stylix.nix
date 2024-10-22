@@ -120,6 +120,31 @@ in {
     $color14 = rgb(${config.lib.stylix.colors.base0E})
     $color15 = rgb(${config.lib.stylix.colors.base0F})
   '';
+  home.file.".wm/colors-rofi.rasi".text = ''
+    * {
+        background: rgba(0,0,1,0.5);
+        foreground: #FFFFFF;
+        color0:     #${config.lib.stylix.colors.base00};
+        color1:     #${config.lib.stylix.colors.base01};
+        color2:     #${config.lib.stylix.colors.base02};
+        color3:     #${config.lib.stylix.colors.base03};
+        color4:     #${config.lib.stylix.colors.base04};
+        color5:     #${config.lib.stylix.colors.base05};
+        color6:     #${config.lib.stylix.colors.base06};
+        color7:     #${config.lib.stylix.colors.base07};
+        color8:     #${config.lib.stylix.colors.base08};
+        color9:     #${config.lib.stylix.colors.base09};
+        color10:     #${config.lib.stylix.colors.base0A};
+        color11:     #${config.lib.stylix.colors.base0B};
+        color12:     #${config.lib.stylix.colors.base0C};
+        color13:     #${config.lib.stylix.colors.base0D};
+        color14:     #${config.lib.stylix.colors.base0E};
+        color15:     #${config.lib.stylix.colors.base0F};
+    }
+  '';
+  home.file.".wm/image-rofi.rasi".text = ''
+    * { current-image: url("/home/${config.home.username}/.wm/wallpapers/wal_square.png", height); }
+  '';
 
   stylix.targets.rofi.enable = true;
   stylix.targets.gtk.enable = true;

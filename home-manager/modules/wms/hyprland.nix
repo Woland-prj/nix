@@ -32,7 +32,7 @@
         "swww-daemon"
 
         # Load wallpaper and color scheme
-        "~/nix/scripts/wallpapers.sh init"
+        "wallpaper"
 
         # Load last wallpaper and waybar with pywal colors
         "waybar"

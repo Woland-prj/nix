@@ -199,7 +199,7 @@ in {
 
       #workspaces button {
         padding: 0;
-        background: @color3;
+        background: @color13;
         transition: all 0.3s ease;
         border-radius: 40px;
         margin-right: 10px;
@@ -207,7 +207,7 @@ in {
       }
       /* #bc8ad2 */
       #workspaces button.active {
-        background: @color5;
+        background: @color9;
         min-width: 50px;
       }
 
@@ -218,7 +218,7 @@ in {
       /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
       #workspaces button:hover {
         text-shadow: none;
-        background: @color6;
+        background: @color5;
       }
 
       #taskbar {
@@ -254,7 +254,7 @@ in {
         padding-right: 16px;
         border-radius: 40px;
         transition: none;
-        color: @color3;
+        color: @color13;
         background-color: rgba(40, 40, 40, 0.6);
       }
 
@@ -282,7 +282,7 @@ in {
         padding-left: 16px;
         border-radius: 40px;
         transition: none;
-        color: @color3;
+        color: @color13;
         background-color: rgba(40, 40, 40, 0.6);
       }
 
@@ -301,7 +301,7 @@ in {
         padding-right: 16px;
         border-radius: 40px;
         transition: none;
-        color: @color3;
+        color: @color13;
         background-color: rgba(40, 40, 40, 0.6);
       }
 
@@ -311,7 +311,7 @@ in {
         padding-left: 16px;
         border-radius: 40px;
         transition: none;
-        color: @color3;
+        color: @color13;
         background-color: rgba(40, 40, 40, 0.6);
       }
 
@@ -321,7 +321,7 @@ in {
         padding-right: 16px;
         border-radius: 40px;
         transition: none;
-        color: @color3;
+        color: @color13;
         background-color: rgba(40, 40, 40, 0.6);
       }
 
@@ -331,13 +331,13 @@ in {
         padding-right: 16px;
         border-radius: 40px;
         transition: none;
-        color: @color3;
+        color: @color13;
         background-color: rgba(40, 40, 40, 0.6);
       }
 
       #pulseaudio.muted {
-        background-color: @color15;
-        color: @color11;
+        background-color: @color13;
+        color: @color3;
       }
 
       #custom-mem {
@@ -345,7 +345,7 @@ in {
         padding-right: 8px;
         border-radius: 40px 0 0 40px;
         transition: none;
-        color: @color3;
+        color: @color13;
         background-color: rgba(40, 40, 40, 0.6);
       }
 
@@ -355,7 +355,7 @@ in {
         padding-right: 16px;
         border-radius: 0 40px 40px 0;
         transition: none;
-        color: @color3;
+        color: @color13;
         background-color: rgba(40, 40, 40, 0.6);
       }
 
@@ -419,7 +419,7 @@ in {
         margin-right: 8px;
         border-radius: 40px;
         transition: none;
-        color: @color3;
+        color: @color13;
         background-color: rgba(40, 40, 40, 0.6);
       }
 
@@ -429,7 +429,7 @@ in {
         font-size: 26px;
         margin-left: -8px;
         /* text-align: center; */
-        color: @color3;
+        color: @color13;
         min-width: 33px;
       }
 
@@ -439,7 +439,7 @@ in {
         padding-right: 16px;
         border-radius: 40px;
         background-color: rgba(40, 40, 40, 0.6);
-        color: @color3;
+        color: @color13;
         transition: none;
       }
 

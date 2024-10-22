@@ -11,8 +11,8 @@ configuration {
 }
 
 /* ---- Load pywal colors (custom wal template) ---- */
-@import "~/.cache/wal/colors-rofi-pywal"
-@import "~/.cache/current_wallpaper.rasi"
+@import "~/.wm/colors-rofi.rasi"
+@import "~/.wm/image-rofi.rasi"
 
 /*****----- Global Properties -----*****/
 * {
@@ -129,7 +129,7 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
+
     spacing:                     10px;
     background-color:            transparent;
     text-color:                  @foreground;

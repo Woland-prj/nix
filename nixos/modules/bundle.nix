@@ -12,6 +12,6 @@
     ./nvidia.nix
     ./thunar.nix
     ./fs.nix
-    ./stylix.nix
+    # ./stylix.nix
   ];
 }
