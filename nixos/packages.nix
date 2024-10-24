@@ -41,6 +41,8 @@ in {
       nodejs
       go
       python
+      docker
+      docker-compose
       (python3.withPackages (ps: with ps; [requests]))
 
       # CLI utils

@@ -12,6 +12,7 @@
     ./nvidia.nix
     ./thunar.nix
     ./fs.nix
+    ./docker.nix
     # ./stylix.nix
   ];
 }
