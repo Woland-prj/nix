@@ -11,8 +11,8 @@
   gtk = {
     enable = true;
     theme = {
-      name = "orchis-theme";
-      package = pkgs.orchis-theme;
+      name = "Materia-dark";
+      package = pkgs.materia-theme;
     };
     iconTheme = {
       name = "Adwaita";
