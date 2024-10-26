@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   gtk = {
     enable = true;
-    gtk.theme.name = "Adwaita-dark";
+    theme.name = "Adwaita-dark";
     iconTheme.package = pkgs.papirus-icon-theme;
     iconTheme.name = "Papirus Dark";
   };
