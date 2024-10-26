@@ -88,6 +88,7 @@ in {
       xdg-desktop-portal-hyprland
       waybar
       wlogout
+      catppuccin
 
       # Sound
       pipewire
