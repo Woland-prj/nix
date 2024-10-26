@@ -6,7 +6,7 @@
     ./alacritty.nix
     ./starship.nix
     ./tmux.nix
-    # ./gtk.nix
+    ./gtk.nix
     ./file.nix
     ./stylix.nix
 

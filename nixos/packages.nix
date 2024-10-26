@@ -26,14 +26,15 @@ in {
       rofi
       wofi
       vlc
-      gparted
       obsidian
       libreoffice
       qbittorrent
       gnome-calculator
       cups
       playerctl
+      insomnia
       writedisk
+      nautilus
 
       # Coding stuff
       gnumake

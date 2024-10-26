@@ -147,7 +147,7 @@ in {
   '';
 
   stylix.targets.rofi.enable = true;
-  stylix.targets.gtk.enable = true;
+  # stylix.targets.gtk.enable = true;
   fonts.fontconfig.defaultFonts = {
     monospace = [userSettings.font];
     sansSerif = [userSettings.font];
