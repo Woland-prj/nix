@@ -1,13 +1,26 @@
 {pkgs, ...}: {
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
+  };
+
   gtk = {
     enable = true;
-    theme.name = "Adwaita-dark";
-    iconTheme.package = pkgs.papirus-icon-theme;
-    iconTheme.name = "Papirus Dark";
-  };
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
+    theme = {
+      name = "orchis-theme";
+      package = pkgs.orchis-theme;
+    };
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.gnome.adwaita-icon-theme;
+    };
+    cursorTheme = {
+      name = "Adwaita";
+      package = pkgs.gnome.adwaita-icon-theme;
     };
   };
 }
