@@ -2,10 +2,10 @@
   gtk = {
     enable = true;
     theme = {
-      name = "adw-gtk3";
-      package = pkgs.adw-gtk3;
+      name = "magnetic-catppuccin-gtk";
+      package = pkgs.magnetic-catppuccin-gtk;
     };
-    iconTheme.package = pkgs.papirus-icon-theme;
-    iconTheme.name = "Papirus Dark";
+    # iconTheme.package = pkgs.papirus-icon-theme;
+    # iconTheme.name = "Papirus Dark";
   };
 }
