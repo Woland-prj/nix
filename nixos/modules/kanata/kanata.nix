@@ -1,6 +1,6 @@
 {
   services.kanata = {
     enable = true;
-    keyboards = builtins.readFile ./kanata.kbd;
+    keyboards.default.config = builtins.readFile ./kanata.kbd;
   };
 }
