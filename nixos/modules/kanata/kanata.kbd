@@ -14,9 +14,6 @@
 )
 
 (deflayermap (extended)
-  u pgdn
-  o pgup
-
   i up
   j left
   k down
