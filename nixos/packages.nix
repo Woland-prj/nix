@@ -77,6 +77,7 @@ in {
       openssl
       lazygit
       xdg-user-dirs
+      yazi
 
       # Wayland stuff
       xwayland
