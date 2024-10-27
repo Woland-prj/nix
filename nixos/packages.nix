@@ -34,7 +34,8 @@ in {
       playerctl
       insomnia
       writedisk
-      nautilus
+      eog
+      # nautilus
 
       # Coding stuff
       gnumake
@@ -88,7 +89,6 @@ in {
       xdg-desktop-portal-hyprland
       waybar
       wlogout
-      catppuccin
 
       # Sound
       pipewire
