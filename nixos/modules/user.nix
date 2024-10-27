@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.zsh.enable = true;
 
   users = {
@@ -7,7 +7,7 @@
     users.woland = {
       isNormalUser = true;
       description = "Woland";
-      extraGroups = [ "networkmanager" "wheel" "input" "libvirtd" ];
+      extraGroups = ["networkmanager" "wheel" "input" "uinput" "libvirtd"];
       packages = with pkgs; [];
     };
   };
