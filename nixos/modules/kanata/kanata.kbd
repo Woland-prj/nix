@@ -8,5 +8,31 @@
 )
 
 (deflayermap (default)
-  caps (tap-hold 100 200 esc lctl)
+  caps (tap-hold 100 200 esc lmet)
+
+  spc (tap-hold 100 200 spc (layer-while-held extended))
+)
+
+(deflayermap (extended)
+  u pgdn
+  o pgup
+
+  i up
+  j left
+  k down
+  l right
+
+  h C-left
+  ; C-right
+
+  m C-S-tab
+  , C-tab
+
+  n home
+  . end
+
+  p C-v
+  y C-c
+  u C-z
+  x C-x
 )
