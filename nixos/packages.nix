@@ -110,6 +110,7 @@ in {
       # VM virtualization
       qemu
       quickemu
+      nodejs
 
       # Other
       home-manager
