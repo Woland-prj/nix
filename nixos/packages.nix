@@ -45,6 +45,7 @@ in {
       python
       docker
       docker-compose
+      pgadmin
       (python3.withPackages (ps: with ps; [requests]))
 
       # CLI utils
@@ -110,7 +111,6 @@ in {
       # VM virtualization
       qemu
       quickemu
-      nodejs
 
       # Other
       home-manager
