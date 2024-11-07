@@ -35,6 +35,7 @@ in {
       insomnia
       writedisk
       eog
+      discord
       # nautilus
 
       # Coding stuff
