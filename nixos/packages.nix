@@ -101,8 +101,6 @@ in {
       pavucontrol
 
       # GPU stuff
-      rocm-opencl-icd
-      glaxnimate
 
       # Screenshotting
       grim
