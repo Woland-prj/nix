@@ -13,6 +13,7 @@
     ./thunar.nix
     ./fs.nix
     ./docker.nix
+    ./gc.nix
 
     ./kanata/kanata.nix
     # ./stylix.nix
