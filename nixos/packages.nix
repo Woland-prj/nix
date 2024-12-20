@@ -35,7 +35,7 @@ in {
       insomnia
       writedisk
       eog
-      discord
+      # discord
       # nautilus
 
       # Coding stuff
@@ -80,6 +80,9 @@ in {
       lazygit
       xdg-user-dirs
       yazi
+
+      # VPN
+      hiddify-app
 
       # Wayland stuff
       xwayland
@@ -134,6 +137,6 @@ in {
     font-awesome
     powerline-fonts
     powerline-symbols
-    nerdfonts
+    nerd-fonts.jetbrains-mono
   ];
 }

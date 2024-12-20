@@ -85,9 +85,10 @@
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/zsh/history";
 
+    # If using pywal
+    #(cat ~/.cache/wal/sequences &)
+    #source ~/.cache/wal/colors-tty.sh
     initExtra = ''
-      (cat ~/.cache/wal/sequences &)
-      source ~/.cache/wal/colors-tty.sh
       pfetch
     '';
   };
