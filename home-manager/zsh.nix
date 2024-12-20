@@ -1,9 +1,6 @@
 {config, ...}: {
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
 
     sessionVariables = {
       TERM = "xterm-256color";
@@ -16,13 +13,17 @@
     zplug = {
       enable = true;
       plugins = [
-        {name = "zsh-users/zsh-autosuggestions";}
-        {name = "zdharma/fast-syntax-highlighting";}
-        {name = "zsh-users/zsh-completions";}
+        # {name = "zsh-users/zsh-autosuggestions";}
+        # {name = "zdharma/fast-syntax-highlighting";}
+        # {name = "zsh-users/zsh-completions";}
         {name = "zsh-users/zsh-history-substring-search";}
         {name = "MichaelAquilina/zsh-you-should-use";}
       ];
     };
+
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
 
     # autostart wm
     # zprof.enable = true;
