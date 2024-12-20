@@ -82,7 +82,7 @@ in {
       yazi
 
       # VPN
-      hiddify-app
+      xray-core
 
       # Wayland stuff
       xwayland

@@ -14,6 +14,7 @@
     ./fs.nix
     ./docker.nix
     ./gc.nix
+    ./vpn.nix
 
     ./kanata/kanata.nix
     # ./stylix.nix
