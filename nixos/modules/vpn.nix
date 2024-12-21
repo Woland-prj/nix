@@ -17,10 +17,10 @@
                     "vnext": [
                         {
                             "address": "cz1.vpnjantit.com", // Замените на адрес вашего сервера
-                            "port": 443,
+                            "port": 10002,
                             "users": [
                                 {
-                                    "id": "b8c027fd-406b-4b76-b85f-ac3fa26b9530", // Ваш UUID
+                                    "id": "f8f9969e-bae0-11ef-904f-52cf00e461ad", // Ваш UUID
                                     "encryption": "none"
                                 }
                             ]
