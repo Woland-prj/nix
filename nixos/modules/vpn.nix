@@ -14,10 +14,10 @@
             {
                 "protocol": "vless",
                 "settings": {
-                    "vnext": [
+                    "v2ray": [
                         {
                             "address": "cz1.vpnjantit.com", // Замените на адрес вашего сервера
-                            "port": 443,
+                            "port": 10002,
                             "users": [
                                 {
                                     "id": "b8c027fd-406b-4b76-b85f-ac3fa26b9530", // Ваш UUID
