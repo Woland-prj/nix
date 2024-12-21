@@ -82,7 +82,7 @@ in {
       yazi
 
       # VPN
-      xray-core
+      xray
 
       # Wayland stuff
       xwayland

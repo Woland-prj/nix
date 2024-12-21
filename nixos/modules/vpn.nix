@@ -43,7 +43,7 @@ in {
     description = "Xray Core VLESS Service";
     wantedBy = ["multi-user.target"];
     serviceConfig = {
-      ExecStart = "${pkgs.xray-core}/bin/xray -config ${xray-config}";
+      ExecStart = "${pkgs.xray}/bin/xray -config ${xray-config}";
       Restart = "always";
       User = "nobody";
     };
