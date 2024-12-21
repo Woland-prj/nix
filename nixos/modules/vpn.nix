@@ -52,7 +52,7 @@ in {
   environment.systemPackages = [
     (pkgs.writeShellScriptBin "run-xray" ''
       #!/usr/bin/env bash
-      ${pkgs.xray-core}/bin/xray -config ${xray-config}
+      ${pkgs.xray}/bin/xray -config ${xray-config}
     '')
   ];
 }
