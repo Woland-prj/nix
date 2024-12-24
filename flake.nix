@@ -17,7 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    portproton-flake.url = "path:~/nix/subflakes/portproton";
+    portproton-flake.url = "path:/home/woland/nix/subflakes/portproton";
   };
 
   outputs = {
