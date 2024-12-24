@@ -16,6 +16,8 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    portproton-flake.url = "path:~/nix/subflakes/portproton";
   };
 
   outputs = {
@@ -23,6 +25,7 @@
     nixpkgs,
     nixpkgs-stable,
     home-manager,
+    portproton-flake,
     ...
   } @ inputs: let
     # ---- SYSTEM SETTINGS ---- #
@@ -74,6 +77,7 @@
 
       modules = [
         ./nixos/configuration.nix
+        portproton-flake.nixosModule
       ];
     };
 
@@ -89,5 +93,7 @@
         inherit inputs;
       };
     };
+
+    defaultPackage = self.packages.${system}.portproton;
   };
 }
