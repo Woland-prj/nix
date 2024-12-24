@@ -26,6 +26,7 @@
     nixpkgs,
     nixpkgs-stable,
     home-manager,
+    flake-utils,
     portproton-flake,
     ...
   } @ inputs:
