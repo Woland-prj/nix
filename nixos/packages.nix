@@ -35,8 +35,10 @@ in {
       insomnia
       writedisk
       eog
-      # discord
-      # nautilus
+
+      # Gaming
+      wine
+      steam
 
       # Coding stuff
       gnumake
