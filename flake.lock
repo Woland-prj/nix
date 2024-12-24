@@ -512,8 +512,8 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1735061942,
-        "narHash": "sha256-dM7nQvpbb0BoE1P5wXkQvkH8S4yIdqt+HnsFsxOZcYI=",
+        "lastModified": 1735064711,
+        "narHash": "sha256-yTgqsnYofPGXrvtACWFuB+Gdl5YTf9PGOYKoN7JbSls=",
         "path": "/home/woland/nix/subflakes/portproton",
         "type": "path"
       },
