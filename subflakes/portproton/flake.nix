@@ -14,15 +14,15 @@
     packages.x86_64-linux = let
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
     in
-      pkgs.stdenv.mkDerivation rec {
+      pkgs.stdenv.mkDerivation {
         pname = "portproton";
         version = "latest";
 
         src = pkgs.fetchFromGitHub {
-          owner = "portproton";
-          repo = "portproton";
+          owner = "Castro-Fidel";
+          repo = "PortWINE";
           rev = "master"; # укажите нужную ревизию или тег
-          sha256 = "0vavksd82k6jshf23vnblqkvkba93h7s8zjd61dbd59bc4sfz20w"; # замените на актуальный sha256
+          sha256 = "0j9p5s9h3q0sfyjhnxy1lzkbj806hfbm94lyp38a4d0q67rgcpmf"; # замените на актуальный sha256
         };
 
         nativeBuildInputs = [pkgs.git pkgs.curl pkgs.make pkgs.gcc];
