@@ -35,7 +35,6 @@ in {
       insomnia
       writedisk
       eog
-      flatpak
 
       # Gaming
       wine
@@ -50,7 +49,8 @@ in {
       docker
       docker-compose
       pgadmin
-      (python3.withPackages (ps: with ps; [requests]))
+      python3
+      # (python313.withPackages (ps: with ps; [requests]))
 
       # CLI utils
       pfetch
@@ -114,8 +114,8 @@ in {
       slurp
 
       # VM virtualization
-      qemu
-      quickemu
+      # qemu
+      # quickemu
 
       # Other
       home-manager

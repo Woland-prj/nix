@@ -15,6 +15,7 @@
     ./docker.nix
     ./gc.nix
     ./vpn.nix
+    ./flatpak.nix
 
     ./kanata/kanata.nix
     # ./stylix.nix

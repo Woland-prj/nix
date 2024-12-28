@@ -18,7 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    portproton-flake.url = "path:/home/woland/nix/subflakes/portproton";
+    # portproton-flake.url = "path:/home/woland/nix/subflakes/portproton";
   };
 
   outputs = {
@@ -26,7 +26,7 @@
     nixpkgs,
     nixpkgs-stable,
     home-manager,
-    portproton-flake,
+    # portproton-flake,
     ...
   } @ inputs: let
     # ---- SYSTEM SETTINGS ---- #
@@ -78,7 +78,7 @@
 
       modules = [
         ./nixos/configuration.nix
-        portproton-flake.nixosModule
+        # portproton-flake.nixosModule
       ];
     };
 
@@ -95,6 +95,6 @@
       };
     };
 
-    defaultPackage.${system} = self.packages.${system}.portproton;
+    # defaultPackage.${system} = self.packages.${system}.portproton;
   };
 }
