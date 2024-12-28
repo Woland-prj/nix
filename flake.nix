@@ -53,7 +53,7 @@
       # window manager type (hyprland or x11) translator
       term = "alacritty"; # Default terminal command;
       font = "JetBrains Mono NF"; # Selected font
-      fontPkg = pkgs.nerdfonts; # Font package
+      fontPkg = pkgs.nerd-fonts.jetbrains-mono; # Font package
       editor = "nvim"; # Default editor;
     };
     system = systemSettings.system;

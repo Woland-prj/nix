@@ -6,6 +6,7 @@
 }: let
   scripts = {
     wttr = import ../scripts/wttr.nix {inherit pkgs;};
+    show-colors = import ../scripts/show-colors.nix {inherit pkgs;};
   };
 in {
   nixpkgs.config = {
@@ -126,6 +127,7 @@ in {
 
       # Special custom scripts
       scripts.wttr
+      scripts.show-colors
     ])
     ++ (with pkgs-stable; [
       # Stable hyprland
