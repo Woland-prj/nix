@@ -166,289 +166,293 @@ in {
         };
       };
     };
-    style = ''
-      @import "/home/${userSettings.username}/.wm/colors-waybar.css";
+    style =
+      /*
+      css
+      */
+      ''
+        @import "/home/${userSettings.username}/.wm/colors-waybar.css";
 
-      /* :root { */
-      /*   --bg-color: rgba(40, 40, 40, 0.6); */
-      /* } */
+        /* :root { */
+        /*   --bg-color: rgba(40, 40, 40, 0.6); */
+        /* } */
 
-      * {
-        border: none;
-        border-radius: 0;
-        /* `otf-font-awesome` is required to be installed for icons */
-        font-family: JetBrainsMono Nerd Font;
-        min-height: 30px;
-        color: @color2;
-        font-weight: bold;
-      }
-
-      window#waybar {
-        background: transparent;
-      }
-
-      window#waybar.hidden {
-        opacity: 0.2;
-      }
-
-      #workspaces {
-        background-color: rgba(40, 40, 40, 0.6);
-        border-radius: 40px;
-        padding: 5px 5px;
-      }
-
-      #workspaces button {
-        padding: 0;
-        background: @color13;
-        transition: all 0.3s ease;
-        border-radius: 40px;
-        margin-right: 10px;
-        min-width: 30px;
-      }
-      /* #bc8ad2 */
-      #workspaces button.active {
-        background: @color9;
-        min-width: 50px;
-      }
-
-      #workspaces button:last-child {
-        margin-right: 0px;
-      }
-
-      /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-      #workspaces button:hover {
-        text-shadow: none;
-        background: @color5;
-      }
-
-      #taskbar {
-        margin-right: 8px;
-        padding: 5px 10px;
-        border-radius: 40px;
-        background-color: rgba(40, 40, 40, 0.6);
-      }
-
-      /* #taskbar.empty { */
-      /*   background-color: ; */
-      /* } */
-
-      #taskbar button {
-        margin-right: 10px;
-        padding: 0;
-        transition: all 0.3s ease;
-        border-radius: 6px;
-      }
-
-      #taskbar button:last-child {
-        margin-right: 0px;
-      }
-
-      #taskbar button:hover {
-        text-shadow: none;
-        background: transparent;
-      }
-
-      #language {
-        padding-left: 16px;
-        margin-right: 8px;
-        padding-right: 16px;
-        border-radius: 40px;
-        transition: none;
-        color: @color13;
-        background-color: rgba(40, 40, 40, 0.6);
-      }
-
-      #custom-pacman {
-        padding-left: 16px;
-        padding-right: 8px;
-        border-radius: 10px 0px 0px 10px;
-        transition: none;
-        color: #ffffff;
-        background: #383c4a;
-      }
-
-      #custom-mail {
-        margin-right: 8px;
-        padding-right: 16px;
-        border-radius: 0px 10px 10px 0px;
-        transition: none;
-        color: #ffffff;
-        background: #383c4a;
-      }
-
-      #custom-playerlabel {
-        margin-right: 8px;
-        padding-right: 16px;
-        padding-left: 16px;
-        border-radius: 40px;
-        transition: none;
-        color: @color13;
-        background-color: rgba(40, 40, 40, 0.6);
-      }
-
-      #mode {
-        padding-left: 16px;
-        padding-right: 16px;
-        border-radius: 10px;
-        transition: none;
-        color: #ffffff;
-        background: #383c4a;
-      }
-
-      #clock {
-        margin-right: 8px;
-        padding-left: 16px;
-        padding-right: 16px;
-        border-radius: 40px;
-        transition: none;
-        color: @color13;
-        background-color: rgba(40, 40, 40, 0.6);
-      }
-
-      #custom-weather {
-        margin-right: 8px;
-        padding-right: 16px;
-        padding-left: 16px;
-        border-radius: 40px;
-        transition: none;
-        color: @color13;
-        background-color: rgba(40, 40, 40, 0.6);
-      }
-
-      #network {
-        margin-right: 8px;
-        padding-left: 16px;
-        padding-right: 16px;
-        border-radius: 40px;
-        transition: none;
-        color: @color13;
-        background-color: rgba(40, 40, 40, 0.6);
-      }
-
-      #pulseaudio {
-        margin-right: 8px;
-        padding-left: 16px;
-        padding-right: 16px;
-        border-radius: 40px;
-        transition: none;
-        color: @color13;
-        background-color: rgba(40, 40, 40, 0.6);
-      }
-
-      #pulseaudio.muted {
-        background-color: @color13;
-        color: @color3;
-      }
-
-      #custom-mem {
-        padding-left: 16px;
-        padding-right: 8px;
-        border-radius: 40px 0 0 40px;
-        transition: none;
-        color: @color13;
-        background-color: rgba(40, 40, 40, 0.6);
-      }
-
-      #cpu {
-        margin-right: 8px;
-        padding-left: 8px;
-        padding-right: 16px;
-        border-radius: 0 40px 40px 0;
-        transition: none;
-        color: @color13;
-        background-color: rgba(40, 40, 40, 0.6);
-      }
-
-      #temperature {
-        margin-right: 8px;
-        padding-left: 16px;
-        padding-right: 16px;
-        border-radius: 10px;
-        transition: none;
-        color: #ffffff;
-        background: #6c61db;
-      }
-
-      #temperature.critical {
-        background-color: #eb4d4b;
-      }
-
-      #backlight {
-        margin-right: 8px;
-        padding-left: 16px;
-        padding-right: 16px;
-        border-radius: 10px;
-        transition: none;
-        color: #ffffff;
-        background: #383c4a;
-      }
-
-      #battery {
-        margin-right: 8px;
-        padding-left: 16px;
-        padding-right: 16px;
-        border-radius: 10px;
-        transition: none;
-        color: #ffffff;
-        background: #383c4a;
-      }
-
-      #battery.charging {
-        color: #ffffff;
-        background-color: #26a65b;
-      }
-
-      #battery.warning:not(.charging) {
-        background-color: #ffbe61;
-        color: black;
-      }
-
-      #battery.critical:not(.charging) {
-        background-color: #f53c3c;
-        color: #ffffff;
-        animation-name: blink;
-        animation-duration: 0.5s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-      }
-
-      #tray {
-        padding-left: 16px;
-        padding-right: 16px;
-        margin-right: 8px;
-        border-radius: 40px;
-        transition: none;
-        color: @color13;
-        background-color: rgba(40, 40, 40, 0.6);
-      }
-
-      #custom-exit {
-        /* padding-left: 16px; */
-        /* padding-right: 16px; */
-        font-size: 26px;
-        margin-left: -8px;
-        /* text-align: center; */
-        color: @color13;
-        min-width: 33px;
-      }
-
-      #custom-updates {
-        padding-left: 16px;
-        margin-right: 8px;
-        padding-right: 16px;
-        border-radius: 40px;
-        background-color: rgba(40, 40, 40, 0.6);
-        color: @color13;
-        transition: none;
-      }
-
-      @keyframes blink {
-        to {
-          background-color: #ffffff;
-          color: #000000;
+        * {
+          border: none;
+          border-radius: 0;
+          /* `otf-font-awesome` is required to be installed for icons */
+          font-family: JetBrainsMono Nerd Font;
+          min-height: 30px;
+          color: @color2;
+          font-weight: bold;
         }
-      }
-    '';
+
+        window#waybar {
+          background: transparent;
+        }
+
+        window#waybar.hidden {
+          opacity: 0.2;
+        }
+
+        #workspaces {
+          background-color: rgba(40, 40, 40, 0.6);
+          border-radius: 40px;
+          padding: 5px 5px;
+        }
+
+        #workspaces button {
+          padding: 0;
+          background: @color13;
+          transition: all 0.3s ease;
+          border-radius: 40px;
+          margin-right: 10px;
+          min-width: 30px;
+        }
+        /* #bc8ad2 */
+        #workspaces button.active {
+          background: @color9;
+          min-width: 50px;
+        }
+
+        #workspaces button:last-child {
+          margin-right: 0px;
+        }
+
+        /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+        #workspaces button:hover {
+          text-shadow: none;
+          background: @color5;
+        }
+
+        #taskbar {
+          margin-right: 8px;
+          padding: 5px 10px;
+          border-radius: 40px;
+          background-color: rgba(40, 40, 40, 0.6);
+        }
+
+        /* #taskbar.empty { */
+        /*   background-color: ; */
+        /* } */
+
+        #taskbar button {
+          margin-right: 10px;
+          padding: 0;
+          transition: all 0.3s ease;
+          border-radius: 6px;
+        }
+
+        #taskbar button:last-child {
+          margin-right: 0px;
+        }
+
+        #taskbar button:hover {
+          text-shadow: none;
+          background: transparent;
+        }
+
+        #language {
+          padding-left: 16px;
+          margin-right: 8px;
+          padding-right: 16px;
+          border-radius: 40px;
+          transition: none;
+          color: @color13;
+          background-color: rgba(40, 40, 40, 0.6);
+        }
+
+        #custom-pacman {
+          padding-left: 16px;
+          padding-right: 8px;
+          border-radius: 10px 0px 0px 10px;
+          transition: none;
+          color: #ffffff;
+          background: #383c4a;
+        }
+
+        #custom-mail {
+          margin-right: 8px;
+          padding-right: 16px;
+          border-radius: 0px 10px 10px 0px;
+          transition: none;
+          color: #ffffff;
+          background: #383c4a;
+        }
+
+        #custom-playerlabel {
+          margin-right: 8px;
+          padding-right: 16px;
+          padding-left: 16px;
+          border-radius: 40px;
+          transition: none;
+          color: @color13;
+          background-color: rgba(40, 40, 40, 0.6);
+        }
+
+        #mode {
+          padding-left: 16px;
+          padding-right: 16px;
+          border-radius: 10px;
+          transition: none;
+          color: #ffffff;
+          background: #383c4a;
+        }
+
+        #clock {
+          margin-right: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
+          border-radius: 40px;
+          transition: none;
+          color: @color13;
+          background-color: rgba(40, 40, 40, 0.6);
+        }
+
+        #custom-weather {
+          margin-right: 8px;
+          padding-right: 16px;
+          padding-left: 16px;
+          border-radius: 40px;
+          transition: none;
+          color: @color13;
+          background-color: rgba(40, 40, 40, 0.6);
+        }
+
+        #network {
+          margin-right: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
+          border-radius: 40px;
+          transition: none;
+          color: @color13;
+          background-color: rgba(40, 40, 40, 0.6);
+        }
+
+        #pulseaudio {
+          margin-right: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
+          border-radius: 40px;
+          transition: none;
+          color: @color13;
+          background-color: rgba(40, 40, 40, 0.6);
+        }
+
+        #pulseaudio.muted {
+          background-color: @color13;
+          color: @color3;
+        }
+
+        #custom-mem {
+          padding-left: 16px;
+          padding-right: 8px;
+          border-radius: 40px 0 0 40px;
+          transition: none;
+          color: @color13;
+          background-color: rgba(40, 40, 40, 0.6);
+        }
+
+        #cpu {
+          margin-right: 8px;
+          padding-left: 8px;
+          padding-right: 16px;
+          border-radius: 0 40px 40px 0;
+          transition: none;
+          color: @color13;
+          background-color: rgba(40, 40, 40, 0.6);
+        }
+
+        #temperature {
+          margin-right: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
+          border-radius: 10px;
+          transition: none;
+          color: #ffffff;
+          background: #6c61db;
+        }
+
+        #temperature.critical {
+          background-color: #eb4d4b;
+        }
+
+        #backlight {
+          margin-right: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
+          border-radius: 10px;
+          transition: none;
+          color: #ffffff;
+          background: #383c4a;
+        }
+
+        #battery {
+          margin-right: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
+          border-radius: 10px;
+          transition: none;
+          color: #ffffff;
+          background: #383c4a;
+        }
+
+        #battery.charging {
+          color: #ffffff;
+          background-color: #26a65b;
+        }
+
+        #battery.warning:not(.charging) {
+          background-color: #ffbe61;
+          color: black;
+        }
+
+        #battery.critical:not(.charging) {
+          background-color: #f53c3c;
+          color: #ffffff;
+          animation-name: blink;
+          animation-duration: 0.5s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;
+        }
+
+        #tray {
+          padding-left: 16px;
+          padding-right: 16px;
+          margin-right: 8px;
+          border-radius: 40px;
+          transition: none;
+          color: @color13;
+          background-color: rgba(40, 40, 40, 0.6);
+        }
+
+        #custom-exit {
+          /* padding-left: 16px; */
+          /* padding-right: 16px; */
+          font-size: 26px;
+          margin-left: -8px;
+          /* text-align: center; */
+          color: @color13;
+          min-width: 33px;
+        }
+
+        #custom-updates {
+          padding-left: 16px;
+          margin-right: 8px;
+          padding-right: 16px;
+          border-radius: 40px;
+          background-color: rgba(40, 40, 40, 0.6);
+          color: @color13;
+          transition: none;
+        }
+
+        @keyframes blink {
+          to {
+            background-color: #ffffff;
+            color: #000000;
+          }
+        }
+      '';
   };
 }

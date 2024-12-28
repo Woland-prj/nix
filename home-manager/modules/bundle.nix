@@ -7,7 +7,6 @@
     ./starship.nix
     ./tmux.nix
     ./gtk.nix
-    ./file.nix
     ./stylix.nix
 
     ./rofi/rofi.nix
