@@ -7,6 +7,7 @@
   scripts = {
     wttr = import ../scripts/wttr.nix {inherit pkgs;};
     show-colors = import ../scripts/show-colors.nix {inherit pkgs;};
+    mkswapfile = import ../scripts/mkswapfile.nix {inherit pkgs;};
   };
 in {
   nixpkgs.config = {
@@ -128,6 +129,7 @@ in {
       # Special custom scripts
       scripts.wttr
       scripts.show-colors
+      scripts.mkswapfile
     ])
     ++ (with pkgs-stable; [
       # Stable hyprland

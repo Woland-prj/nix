@@ -72,9 +72,9 @@
         button:focus,
         button:active,
         button:hover {
-            color: @color11;
+            color: @color3;
         	background-color: rgba(12, 12, 12, 0.5);
-        	border: 3px solid @color11;
+        	border: 3px solid @color3;
         }
 
         #lock {
